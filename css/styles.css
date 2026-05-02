@@ -272,3 +272,146 @@ section {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* ===================================
+   RESPONSIVE — Tablet (≤1024px)
+   =================================== */
+@media (max-width: 1024px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .video-card {
+        width: 360px;
+        min-width: 360px;
+    }
+
+    .vid-row {
+        gap: 24px;
+    }
+
+    .logo-box {
+        width: 140px;
+        min-width: 140px;
+        height: 80px;
+    }
+
+    .logo-row {
+        gap: 16px;
+    }
+
+    .video-card .click-overlay svg {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* ===================================
+   RESPONSIVE — Mobile (≤768px)
+   =================================== */
+@media (max-width: 768px) {
+    section {
+        padding: 48px 0;
+    }
+
+    .video-card {
+        width: 280px;
+        min-width: 280px;
+    }
+
+    .vid-row {
+        gap: 16px;
+    }
+
+    .vid-left .vid-row {
+        animation-duration: 20s;
+    }
+
+    .vid-right .vid-row {
+        animation-duration: 20s;
+    }
+
+    .logo-box {
+        width: 120px;
+        min-width: 120px;
+        height: 64px;
+        font-size: 0.45rem;
+        letter-spacing: 0.2em;
+    }
+
+    .logo-row {
+        gap: 12px;
+    }
+
+    .logo-left .logo-row {
+        animation-duration: 25s;
+    }
+
+    .logo-right .logo-row {
+        animation-duration: 25s;
+    }
+
+    .glass-card {
+        padding: 2rem !important;
+    }
+
+    .glass-card:hover {
+        transform: none;
+    }
+
+    .btn-main {
+        padding: 0.8rem 1.8rem;
+        font-size: 0.6rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .video-card .click-overlay svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .corp-video iframe {
+        transform: scale(1.2);
+    }
+
+    .modern-icon {
+        padding: 8px;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE — Small phone (≤480px)
+   =================================== */
+@media (max-width: 480px) {
+    section {
+        padding: 36px 0;
+    }
+
+    .video-card {
+        width: 240px;
+        min-width: 240px;
+    }
+
+    .vid-row {
+        gap: 12px;
+    }
+
+    .logo-box {
+        width: 100px;
+        min-width: 100px;
+        height: 56px;
+        font-size: 0.4rem;
+        letter-spacing: 0.15em;
+    }
+
+    .logo-row {
+        gap: 8px;
+    }
+
+    .video-card .click-overlay svg {
+        width: 28px;
+        height: 28px;
+    }
+}
