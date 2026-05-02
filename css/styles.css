@@ -1,0 +1,274 @@
+/* ===================================
+   ADSTUDIO — Main Stylesheet
+   =================================== */
+
+:root {
+    --accent: #ff0a0a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+}
+
+/* ===== GLASS CARDS ===== */
+.glass-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+}
+
+/* ===== BUTTONS ===== */
+.btn-main {
+    padding: 1rem 2.5rem;
+    background: #fff;
+    color: #000;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-main:hover {
+    background: #e5e5e5;
+    letter-spacing: 0.3em;
+    transform: scale(1.05);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: #fff;
+}
+
+.btn-outline:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+/* ===== VIDEO CAROUSEL ===== */
+.video-card {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 480px;
+    min-width: 480px;
+    aspect-ratio: 16/9;
+    transition: all 0.5s ease;
+}
+
+.video-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 60px rgba(255, 10, 10, 0.15);
+}
+
+.video-card iframe {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
+    pointer-events: none;
+    border: none;
+}
+
+/* Transparent click layer for YouTube link */
+.video-card .click-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    transition: background 0.4s ease;
+}
+
+.video-card:hover .click-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.video-card .click-overlay svg {
+    width: 56px;
+    height: 56px;
+    color: #fff;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.video-card:hover .click-overlay svg {
+    opacity: 1;
+}
+
+/* Video carousel track */
+.vid-track {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.vid-row {
+    display: flex;
+    gap: 40px;
+    flex-shrink: 0;
+}
+
+@keyframes vidSlideLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - 40px)); }
+}
+
+@keyframes vidSlideRight {
+    from { transform: translateX(calc(-100% - 40px)); }
+    to { transform: translateX(0); }
+}
+
+.vid-left .vid-row {
+    animation: vidSlideLeft 35s linear infinite;
+}
+
+.vid-right .vid-row {
+    animation: vidSlideRight 35s linear infinite;
+}
+
+/* ===== CORPORATE VIDEO ===== */
+.corp-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #080808;
+}
+
+.corp-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: scale(1.15);
+}
+
+.corp-video .vid-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background: transparent;
+}
+
+/* ===== UI ELEMENTS ===== */
+.modern-icon {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+/* ===== LOGO CAROUSEL ===== */
+.logo-box {
+    width: 180px;
+    min-width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #444;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+}
+
+.logo-box:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo-track {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.logo-row {
+    display: flex;
+    gap: 24px;
+    flex-shrink: 0;
+}
+
+@keyframes logoLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - 24px)); }
+}
+
+@keyframes logoRight {
+    from { transform: translateX(calc(-100% - 24px)); }
+    to { transform: translateX(0); }
+}
+
+.logo-left .logo-row {
+    animation: logoLeft 45s linear infinite;
+}
+
+.logo-right .logo-row {
+    animation: logoRight 45s linear infinite;
+}
+
+/* ===== LAYOUT ===== */
+section {
+    padding: 100px 0;
+}
+
+/* ===== ANIMATIONS ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
